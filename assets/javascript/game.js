@@ -7,8 +7,7 @@ $(document).ready(function () {
     var sapphire;
     var diamond;
     var emerald;
-    var userScore;
-    var crystalValue = [ruby, sapphire, diamond, emerald];
+    var userScore = 0;
     var win = 0;
     var loss = 0;
 
@@ -22,58 +21,50 @@ $(document).ready(function () {
 
     $("#targetScoreSpot").text("Random Number: " + targetScore);
 
+
     // get value for each crystal
 
-    for (var i = 0; i < crystalValue.length; i++) {
-        crystalValue[i] = Math.floor(Math.random() * 12) + 1;
+    console.log("-----------------");
+    ruby = Math.floor(Math.random() * 11 + 1);
+    console.log("Ruby Value: " + ruby);
+    sapphire = Math.floor(Math.random() * 11 + 1);
+    console.log("Sapphire Value: " + sapphire);
+    diamond = Math.floor(Math.random() * 11 + 1);
+    console.log("Diamond Value: " + diamond);
+    emerald = Math.floor(Math.random() * 11 + 1);
+    console.log("Emerald Value: " + emerald);
+    console.log("-----------------");
 
-        if (i === 0) {
-            console.log("-----------------");
-            console.log("Ruby Value: " + crystalValue[i]);
-        }
-        else if (i === 1) {
-            console.log("Sapphire Value: " + crystalValue[i]);
-        }
-        else if (i === 2) {
-            console.log("Diamond Value: " + crystalValue[i]);
-        }
-        else {
-            console.log("Emerald Value: " + crystalValue[i]);
-            console.log("-----------------");
-        }
-    }
+    $("#wins").text(win);
+    $("#losses").text(loss);
 
     // create a reset function to reset the variable
 
+
     function reset() {
-        var targetScore = Math.floor(Math.random() * (120 - 19)) + 19;
+
+        targetScore = Math.floor(Math.random() * (120 - 19)) + 19;
+
+        console.log("-----------------");
         console.log("Random Number: " + targetScore);
+
         $("#targetScoreSpot").text("Random Number: " + targetScore);
+
+        console.log("-----------------");
+        ruby = Math.floor(Math.random() * 11 + 1);
+        console.log("Ruby Value: " + ruby);
+        sapphire = Math.floor(Math.random() * 11 + 1);
+        console.log("Sapphire Value: " + sapphire);
+        diamond = Math.floor(Math.random() * 11 + 1);
+        console.log("Diamond Value: " + diamond);
+        emerald = Math.floor(Math.random() * 11 + 1);
+        console.log("Emerald Value: " + emerald);
+        console.log("-----------------");
+
         userScore = 0;
 
-        for (var i = 0; i < crystalValue.length; i++) {
-            crystalValue[i] = Math.floor(Math.random() * 12) + 1;
-
-            if (i === 0) {
-                console.log("-----------------");
-                console.log("Ruby Value: " + crystalValue[i]);
-            }
-            else if (i === 1) {
-                console.log("Sapphire Value: " + crystalValue[i]);
-            }
-            else if (i === 2) {
-                console.log("Diamond Value: " + crystalValue[i]);
-            }
-            else {
-                console.log("Emerald Value: " + crystalValue[i]);
-                console.log("-----------------");
-            }
-        }
+        $("#score").text(userScore);
     }
-
-    //  set user score to 0
-
-    userScore = 0;
 
     // display user score on the web page
 
@@ -105,7 +96,7 @@ $(document).ready(function () {
     // ruby
 
     $("#ruby").on("click", function () {
-        userScore += crystalValue[0];
+        userScore = userScore + ruby;
         wins();
         losses();
         $("#score").text(userScore);
@@ -118,7 +109,7 @@ $(document).ready(function () {
     // sapphire
 
     $("#sapphire").on("click", function () {
-        userScore += crystalValue[1];
+        userScore = userScore + sapphire;
         wins();
         losses();
         $("#score").text(userScore);
@@ -130,7 +121,7 @@ $(document).ready(function () {
     // diamond
 
     $("#diamond").on("click", function () {
-        userScore += crystalValue[2];
+        userScore = userScore + diamond;
         wins();
         losses();
         $("#score").text(userScore);
@@ -141,7 +132,7 @@ $(document).ready(function () {
     // emerald
 
     $("#emerald").on("click", function () {
-        userScore += crystalValue[3];
+        userScore = userScore + emerald;
         wins();
         losses();
         $("#score").text(userScore);
