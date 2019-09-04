@@ -9,16 +9,12 @@ $(document).ready(function () {
     var emerald;
     var userScore;
     var crystalValue = [ruby, sapphire, diamond, emerald];
-    var max = 120; // max value for the target score
-    var min = 19;   // min value for the target score
-    var maxCrystals = 12;   // max value for crystals
-    var minCrystals = 1;    // min value for crystals
     var win = 0;
     var loss = 0;
 
     // generate random target score
 
-    var targetScore = Math.floor(Math.random() * (max - min)) + min;
+    var targetScore = Math.floor(Math.random() * (120 - 19)) + 19;
     console.log("-----------------");
     console.log("Random Number: " + targetScore);
 
@@ -29,7 +25,7 @@ $(document).ready(function () {
     // get value for each crystal
 
     for (var i = 0; i < crystalValue.length; i++) {
-        crystalValue[i] = Math.floor(Math.random() * maxCrystals) + minCrystals;
+        crystalValue[i] = Math.floor(Math.random() * 12) + 1;
 
         if (i === 0) {
             console.log("-----------------");
@@ -50,13 +46,13 @@ $(document).ready(function () {
     // create a reset function to reset the variable
 
     function reset() {
-        var targetScore = Math.floor(Math.random() * (max - min)) + min;
+        var targetScore = Math.floor(Math.random() * (120 - 19)) + 19;
         console.log("Random Number: " + targetScore);
         $("#targetScoreSpot").text("Random Number: " + targetScore);
         userScore = 0;
 
         for (var i = 0; i < crystalValue.length; i++) {
-            crystalValue[i] = Math.floor(Math.random() * maxCrystals) + minCrystals;
+            crystalValue[i] = Math.floor(Math.random() * 12) + 1;
 
             if (i === 0) {
                 console.log("-----------------");
