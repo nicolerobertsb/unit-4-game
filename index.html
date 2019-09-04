@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Crystal Selector Game</title>
+    <!-- Link style sheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- JUMBOTRON HEADER -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="jumbotron header">
+                    <h1 class="text-center page-title">Crystal Collector Game</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GAME INSTRUCTIONS -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 main-content">
+                <p>You will be given a random number at the start of the game.</p>
+                <br>
+                <p>There are four crystals below. By clicking on a cystal, you will add a specific amount of points to
+                    your total score.</p>
+                <br>
+                <p>You win the game by matching your total score to a random number, you lose the game if your total
+                    score goes above the random number.</p>
+                <br>
+                <p>The value of each crystal is hidden from you until you click on it.</p>
+                <br>
+                <p>Each time the game starts, the game will change the values of each crystal.</p>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- RANDOM TARGET NUMBER, WINS, LOSSES -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-4 random-digit">
+                <h1 id="targetScoreSpot"></h1>
+            </div>
+            <div class="col-md-3 col-sm-4 score-board">
+                <h1>Wins:<span id="wins"></span></h1>
+                <br>
+                <h1>Losses:<span id="losses"></span></h1>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <!-- CRYSTAL IMAGES -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 
+           col-sm-3 ruby">
+                <img src="assets/images/rsz_ruby.jpg">
+            </div>
+            <div class="col-md-2 col-sm-3 sapphire">
+                <img src="assets/images/rsz_sapphire.jpg">
+            </div>
+            <div class="col-md-2 col-sm-3 diamond">
+                <img src="assets/images/rsz_diamond.jpg">
+            </div>
+            <div class="col-md-2 col-sm-3 emerald">
+                <img src="assets/images/rsz_1emerald.jpg">
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-8 total">
+                <h1>Your total score is: <span id="score"></span></h1>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
+</body>
+
+</html>

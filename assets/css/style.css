@@ -1,0 +1,34 @@
+body{
+    background-image: url(https://thumbs.dreamstime.com/z/ice-crystals-texture-background-16757052.jpg);
+    font-family: sans-serif;
+}
+
+.main-content{
+    background: white;
+    padding: 15px;
+}
+
+.random-digit {
+    background: white;
+    padding: 15px;
+}
+
+.score-board{
+    background: lightskyblue;
+    padding: 15px;
+}
+
+.container img{
+    max-width: 100%;
+}
+
+.total{
+    background: lightpink;
+    padding: 15px;
+    
+}
+/* @media screen and (max-width: 480px) {
+    img {
+         width: 50px;
+    }
+} */
