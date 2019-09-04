@@ -10,7 +10,7 @@ var max = 120; // max value for the target score
 var min = 19;   // min value for the target score
 var maxCrystals = 12;   // max value for crystals
 var minCrystals = 1;    // min value for crystals
-var wins = 0;
+var win = 0;
 var loss = 0;
 
 
@@ -54,28 +54,76 @@ for (var i = 0; i < crystalValue.length; i++) {
     }
 }
 
-// 5. when user clicks on a crystal, add crystal to user score
-
-
-// 6. update user score on page
-
-// 7. calculate wins
+// 5. calculate wins
 
 function wins() {
     if (userScore === targetScore) {
         win++;
-        $("#wins").text(wins)
+        $("#wins").text(win)
     }
 }
 
-// 8. calculate losses
+// 6. calculate losses
 
-function loss() {
+function losses() {
     if (userScore > targetScore) {
         loss++;
         $("#losses").text(loss)
     }
 }
+
+// 7. when user clicks on a crystal, add crystal to user score
+
+// ruby
+
+function rubyCrystal() {
+    $("#ruby").on("click", function () {
+        userScore += crystalValue[0];
+        wins();
+        losses();
+        $("#score").text(userScore);
+        return userScore;
+    })
+}
+
+// sapphire
+
+function sapphireCrystal() {
+    $("#sapphire").on("click", function () {
+        userScore += crystalValue[1];
+        wins();
+        losses();
+        $("#score").text(userScore);
+        return userScore;
+    })
+}
+
+// diamond
+
+function diamondCrystal() {
+    $("#diamond").on("click", function () {
+        userScore += crystalValue[2];
+        wins();
+        losses();
+        $("#score").text(userScore);
+        return userScore;
+    })
+}
+
+// emerald
+
+function emeraldCrystal() {
+    $("#emerald").on("click", function () {
+        userScore += crystalValue[3];
+        wins();
+        losses();
+        $("#score").text(userScore);
+        return userScore;
+    })
+}
+
+// 8. update user score on page
+
 
 // 9. check if game is over
 
