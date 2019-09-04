@@ -16,25 +16,23 @@ var loss = 0;
 $(document).ready(function () {
 
 
-    // 2. create a reset function to reset the variable
-
-
-
-    // 3. generate random target score
+    // generate random target score
 
     var targetScore = Math.floor(Math.random() * 120) + 1;
+    console.log("-----------------");
     console.log("Random Number: " + targetScore);
 
     // display random target score to the user
 
     $("#targetScoreSpot").text("Random Number: " + targetScore);
 
-    // 4. get value for each crystal
+    // get value for each crystal
 
     for (var i = 0; i < crystalValue.length; i++) {
         crystalValue[i] = Math.floor(Math.random() * maxCrystals) + minCrystals;
 
         if (i === 0) {
+            console.log("-----------------");
             console.log("Ruby Value: " + crystalValue[i]);
         }
         else if (i === 1) {
@@ -49,6 +47,34 @@ $(document).ready(function () {
         }
     }
 
+    // create a reset function to reset the variable
+
+    function reset() {
+        var targetScore = Math.floor(Math.random() * 120) + 1;
+        console.log("Random Number: " + targetScore);
+        $("#targetScoreSpot").text("Random Number: " + targetScore);
+        userScore = 0;
+
+        for (var i = 0; i < crystalValue.length; i++) {
+            crystalValue[i] = Math.floor(Math.random() * maxCrystals) + minCrystals;
+
+            if (i === 0) {
+                console.log("-----------------");
+                console.log("Ruby Value: " + crystalValue[i]);
+            }
+            else if (i === 1) {
+                console.log("Sapphire Value: " + crystalValue[i]);
+            }
+            else if (i === 2) {
+                console.log("Diamond Value: " + crystalValue[i]);
+            }
+            else {
+                console.log("Emerald Value: " + crystalValue[i]);
+                console.log("-----------------");
+            }
+        }
+    }
+
     //  set user score to 0
 
     userScore = 0;
@@ -58,25 +84,27 @@ $(document).ready(function () {
     $("#score").text(userScore);
 
 
-    // 5. calculate wins
+    // calculate wins
 
     function wins() {
         if (userScore === targetScore) {
             win++;
-            $("#wins").text(win)
+            $("#wins").text(win);
+            reset();
         }
     }
 
-    // 6. calculate losses
+    // calculate losses
 
     function losses() {
         if (userScore > targetScore) {
             loss++;
             $("#losses").text(loss)
+            reset();
         }
     }
 
-    // 7. when user clicks on a crystal, add crystal to user score
+    // when user clicks on a crystal, add crystal to user score
 
     // ruby
 
@@ -85,7 +113,9 @@ $(document).ready(function () {
         wins();
         losses();
         $("#score").text(userScore);
+        console.log("New user score= " + userScore)
         return userScore;
+
     })
 
 
@@ -96,6 +126,7 @@ $(document).ready(function () {
         wins();
         losses();
         $("#score").text(userScore);
+        console.log("New user score= " + userScore)
         return userScore;
     })
 
@@ -107,6 +138,7 @@ $(document).ready(function () {
         wins();
         losses();
         $("#score").text(userScore);
+        console.log("New user score= " + userScore)
         return userScore;
     })
 
@@ -117,15 +149,9 @@ $(document).ready(function () {
         wins();
         losses();
         $("#score").text(userScore);
+        console.log("New user score= " + userScore)
         return userScore;
     })
 
-
-    // 8. update user score on page
-
-
-    // 9. check if game is over
-
-    // reset all variables
 
 });
