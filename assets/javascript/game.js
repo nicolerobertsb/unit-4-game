@@ -13,70 +13,73 @@ var minCrystals = 1;    // min value for crystals
 var win = 0;
 var loss = 0;
 
+$(document).ready(function () {
 
-// 2. create a reset function to reset the variable
+
+    // 2. create a reset function to reset the variable
 
 
-// 3. generate random target score
 
-var targetScore = Math.floor(Math.random() * 120) + 1;
-console.log("Random Number: " + targetScore);
+    // 3. generate random target score
 
-// display random target score to the user
+    var targetScore = Math.floor(Math.random() * 120) + 1;
+    console.log("Random Number: " + targetScore);
 
-$("#targetScoreSpot").text("Random Number: " + targetScore);
+    // display random target score to the user
 
-// 3. set user score to 0
+    $("#targetScoreSpot").text("Random Number: " + targetScore);
 
-userScore = 0;
+    // 4. get value for each crystal
 
-// display user score on the web page
+    for (var i = 0; i < crystalValue.length; i++) {
+        crystalValue[i] = Math.floor(Math.random() * maxCrystals) + minCrystals;
 
-$("#score").text(userScore);
-
-// 4. get value for each crystal
-
-for (var i = 0; i < crystalValue.length; i++) {
-    crystalValue[i] = Math.floor(Math.random() * maxCrystals) + minCrystals;
-
-    if (i === 0) {
-        console.log("Ruby Value: " + crystalValue[i]);
+        if (i === 0) {
+            console.log("Ruby Value: " + crystalValue[i]);
+        }
+        else if (i === 1) {
+            console.log("Sapphire Value: " + crystalValue[i]);
+        }
+        else if (i === 2) {
+            console.log("Diamond Value: " + crystalValue[i]);
+        }
+        else {
+            console.log("Emerald Value: " + crystalValue[i]);
+            console.log("-----------------");
+        }
     }
-    else if (i === 1) {
-        console.log("Sapphire Value: " + crystalValue[i]);
+
+    //  set user score to 0
+
+    userScore = 0;
+
+    // display user score on the web page
+
+    $("#score").text(userScore);
+
+
+    // 5. calculate wins
+
+    function wins() {
+        if (userScore === targetScore) {
+            win++;
+            $("#wins").text(win)
+        }
     }
-    else if (i === 2) {
-        console.log("Diamond Value: " + crystalValue[i]);
+
+    // 6. calculate losses
+
+    function losses() {
+        if (userScore > targetScore) {
+            loss++;
+            $("#losses").text(loss)
+        }
     }
-    else {
-        console.log("Emerald Value: " + crystalValue[i]);
-        console.log("-----------------");
-    }
-}
 
-// 5. calculate wins
+    // 7. when user clicks on a crystal, add crystal to user score
 
-function wins() {
-    if (userScore === targetScore) {
-        win++;
-        $("#wins").text(win)
-    }
-}
+    // ruby
 
-// 6. calculate losses
-
-function losses() {
-    if (userScore > targetScore) {
-        loss++;
-        $("#losses").text(loss)
-    }
-}
-
-// 7. when user clicks on a crystal, add crystal to user score
-
-// ruby
-
-function rubyCrystal() {
     $("#ruby").on("click", function () {
         userScore += crystalValue[0];
         wins();
@@ -84,11 +87,10 @@ function rubyCrystal() {
         $("#score").text(userScore);
         return userScore;
     })
-}
 
-// sapphire
 
-function sapphireCrystal() {
+    // sapphire
+
     $("#sapphire").on("click", function () {
         userScore += crystalValue[1];
         wins();
@@ -96,11 +98,10 @@ function sapphireCrystal() {
         $("#score").text(userScore);
         return userScore;
     })
-}
 
-// diamond
 
-function diamondCrystal() {
+    // diamond
+
     $("#diamond").on("click", function () {
         userScore += crystalValue[2];
         wins();
@@ -108,11 +109,9 @@ function diamondCrystal() {
         $("#score").text(userScore);
         return userScore;
     })
-}
 
-// emerald
+    // emerald
 
-function emeraldCrystal() {
     $("#emerald").on("click", function () {
         userScore += crystalValue[3];
         wins();
@@ -120,11 +119,13 @@ function emeraldCrystal() {
         $("#score").text(userScore);
         return userScore;
     })
-}
-
-// 8. update user score on page
 
 
-// 9. check if game is over
+    // 8. update user score on page
 
-// reset all variables
+
+    // 9. check if game is over
+
+    // reset all variables
+
+});
