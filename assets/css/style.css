@@ -4,8 +4,8 @@ body{
 }
 
 .jumbotron{
-    border: solid rgb(171, 238, 243) 5px;
-    background: white;
+    border: solid white 10px;
+    background: rgb(171, 238, 243);
 }
 
 .jumbo{
