@@ -61,7 +61,21 @@ for (var i = 0; i < crystalValue.length; i++) {
 
 // 7. calculate wins
 
+function wins() {
+    if (userScore === targetScore) {
+        win++;
+        $("#wins").text(wins)
+    }
+}
+
 // 8. calculate losses
+
+function loss() {
+    if (userScore > targetScore) {
+        loss++;
+        $("#losses").text(loss)
+    }
+}
 
 // 9. check if game is over
 
