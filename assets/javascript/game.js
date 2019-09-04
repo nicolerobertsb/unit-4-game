@@ -1,5 +1,19 @@
 // 1. create variables
 
+var ruby;
+var sapphire;
+var diamond;
+var emerald;
+var userScore;
+var crystals = [ruby, sapphire, diamond, emerald];
+var max = 120; // max value for the target score
+var min = 19;   // min value for the target score
+var maxCrystals = 12;   // max value for crystals
+var minCrystals = 1;    // min value for crystals
+var wins = 0;
+var loss = 0;
+
+
 // 2. create a reset function to reset the variable
 
 
